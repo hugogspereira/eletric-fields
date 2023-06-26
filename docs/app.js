@@ -4,8 +4,8 @@
  59187 - Bernardo Calvo
 */
 
-import * as UTILS from '../libs/utils.js';
-import * as MV from '../libs/MV.js'
+import * as UTILS from './libs/utils.js';
+import * as MV from './libs/MV.js'
 
 /** @type {WebGLRenderingContext} */
 let gl;
@@ -97,10 +97,10 @@ function setup(shaders)
     gl = UTILS.setupWebGL(canvas);
 
     // program to draw the grid
-    programGrid = UTILS.buildProgramFromSources(gl, shaders["../../Shaders/shader1.vert"], shaders["../../Shaders/shader1.frag"]);
+    programGrid = UTILS.buildProgramFromSources(gl, shaders["shader1.vert"], shaders["shader1.frag"]);
 
     // program to draw the charges
-    programCharges = UTILS.buildProgramFromSources(gl, shaders["../../Shaders/shader2.vert"], shaders["../../Shaders/shader2.frag"]);
+    programCharges = UTILS.buildProgramFromSources(gl, shaders["shader2.vert"], shaders["shader2.frag"]);
 
     /* create the grid points the corresponding duplicates to draw the lines of the eletric field
     auxX and auxY are used to create a random offset for the position in the corresponding grid to  
@@ -201,6 +201,6 @@ window.addEventListener("keydown", function(event) {
 });
 
 {
-const allShaders = ["../../Shaders/shader1.vert", "../../Shaders/shader2.vert", "../../Shaders/shader1.frag", "../../Shaders/shader2.frag"];
+const allShaders = ["shader1.vert", "shader2.vert", "shader1.frag", "shader2.frag"];
 UTILS.loadShadersFromURLS(allShaders).then(s => setup(s));
 }
