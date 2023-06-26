@@ -201,6 +201,6 @@ window.addEventListener("keydown", function(event) {
 });
 
 {
-const allShaders = ["shader1.vert", "shader2.vert", "shader1.frag", "shader2.frag"];
+const allShaders = ["./Shaders/shader1.vert", "./Shaders/shader2.vert", "./Shaders/shader1.frag", "./Shaders/shader2.frag"];
 UTILS.loadShadersFromURLS(allShaders).then(s => setup(s));
 }
